@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd ng && yarn install",
+    "postinstall": "cd ng && yarn install && yarn cache",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && cd ng && yarn build --prod",
-    "heroku-postbuild": "rm -rf src && cp -r ng/dist/ng dist/ng && rm -rf ng",
+    "heroku-postbuild": "tsc && cd ng && yarn build --prod && rm -rf src && cp -r ng/dist/ng dist/ng && rm -rf ng",
     "start": "node dist/server.js",
     "start:dev": "tsnd --respawn --transpile-only src/server.ts"
   },
