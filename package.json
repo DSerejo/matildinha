@@ -7,7 +7,8 @@
     "postinstall": "cd ng && yarn install --production=false",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && cd ng && yarn install && yarn build --prod",
-    "heroku-postbuild": "tsc && cd ng && yarn build --prod && rm -rf src && cd .. && cp -r ng/dist/ng dist/ng &&  rm -rf ng",
+    "heroku-postbuild": "tsc && cd ng && yarn build --prod  && cd .. && cp -r ng/dist/ng dist/ng",
+    "heroku-cleanup": "rm -rf src &&  rm -rf ng",
     "start": "node dist/server.js",
     "start:dev": "tsnd --respawn --transpile-only src/server.ts"
   },
