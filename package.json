@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd ng && yarn install && yarn cache",
+    "postinstall": "cd ng && yarn install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && cd ng && yarn build --prod",
     "heroku-postbuild": "tsc && cd ng && yarn build --prod && rm -rf src && cp -r ng/dist/ng dist/ng && rm -rf ng",
