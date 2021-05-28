@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc && cd ng && yarn install && yarn build --prod",
+    "build": "tsc && cd ng && yarn install --production=false && yarn build --prod",
     "start": "node dist/server.js",
     "start:dev": "tsnd --respawn --transpile-only src/server.ts"
   },
