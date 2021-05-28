@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc && cd ng && yarn build --prod",
-    "heroku-postbuild": "tsc && cd ng && yarn install&&  yarn build --prod && rm -rf src && cp -r ng/dist/ng dist/ng && rm -rf ng",
+    "build": "tsc && cd ng && yarn install && yarn build --prod",
     "start": "node dist/server.js",
     "start:dev": "tsnd --respawn --transpile-only src/server.ts"
   },
+  "cacheDirectories": [
+    "node_modules",
+    "ng/node_modules"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
