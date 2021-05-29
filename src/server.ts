@@ -31,7 +31,7 @@ app.use((req, res , next) => {
   di.response = res;
   next();
 })
-app.get('/', (req, res) => res.render('index.html'));
+
 
 
 
@@ -41,6 +41,7 @@ app.get('/', (req, res) => res.render('index.html'));
 //   res.send(evento);
 // });
 app.use('/api/evento', eventoRoute);
+app.get('*', (req, res) => res.render('index.html'));
 app.listen(PORT, () => {
   console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);
 });
