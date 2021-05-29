@@ -13,7 +13,7 @@ const PORT =  process.env.PORT || 8000;
 const DB_NAME = process.env.DB_NAME || 'dev'
 mongoose.connect(`mongodb+srv://admin:2mASMJfcpaUnWhJf@cluster0.uawp9.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`,
 {useNewUrlParser: true, useUnifiedTopology: true})
-
+app.engine('html', require('ejs').renderFile);
 app.use(cors({
   origin: true,
   credentials: true,
