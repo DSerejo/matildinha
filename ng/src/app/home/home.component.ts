@@ -25,7 +25,8 @@ export class HomeComponent implements OnInit {
   }
   onLast(e: Evento){
     this.last = e
-    this.ultimoCompleto = !!e.fim || e.tipo == 'fralda'
+    
+    this.ultimoCompleto = !e || !!e.fim || e.tipo == 'fralda'
     this.loading = false;
     if(!this.ultimoCompleto){
       timer(0, 1000).subscribe(() => {
