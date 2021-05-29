@@ -1,0 +1,21 @@
+<ng-container *ngIf="loading">
+    <app-infinite-loading class="loading"></app-infinite-loading>
+   
+
+    <div class="loading-overlay"></div>
+</ng-container>
+
+<ng-container *ngIf="!loading">
+    <ng-container *ngIf="last && !ultimoCompleto">
+        <div>
+            Ultimo evento: {{last.tipo}}
+        </div>
+        <div>Inicio: {{inicio}}</div>
+        <div>Duracao: {{duracao$ | async}}</div>
+    </ng-container>
+
+    <div class="actions mt-4">
+        <button class="btn btn-outline-primary" *ngIf="last && !ultimoCompleto" (click)="concluir()">Concluir</button>
+        <a class="btn btn-outline-primary ml-4" [routerLink]="['/evento']">Novo</a>
+    </div>
+</ng-container>

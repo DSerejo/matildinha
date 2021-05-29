@@ -1,0 +1,22 @@
+:host{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.actions {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.loading {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: calc(var(--overlay-z-index) + 1);
+}

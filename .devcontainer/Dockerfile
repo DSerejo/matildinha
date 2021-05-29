@@ -10,7 +10,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends git curl openssh-client
 
 RUN curl https://cli-assets.heroku.com/install.sh | sh
-RUN git config core.sshCommand "ssh -i ssh/id_rsa -F /dev/null"
+# RUN git config core.sshCommand "ssh -i ssh/id_rsa -F /dev/null"
 RUN git config  --global user.email "denny_serejo@hotmail.com"
 RUN git config  --global user.name "Denny Serejo"
 

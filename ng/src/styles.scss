@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+:root{
+    --primary-color-base: #{hue($primary)}, #{saturation($primary)};
+    --primary-color-l: #{lightness($primary)};
+    --primary-color: #{$primary};
+    --secondary-color: #{$secondary};
+    --primary-color-medium: hsl(var(--primary-color-base), calc(var(--primary-color-l) - 5%));
+    --overlay-z-index: 1050;
+}
+
+.loading-overlay{
+    position: absolute;
+    pointer-events: unset;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--overlay-z-index);
+    background-color: white;
+    opacity: 0.5;
+}

@@ -1,0 +1,5 @@
+
+<select [attr.aria-label]="label" [(ngModel)]="value">
+    <option *ngFor="let opt of items" [ngValue]="opt[bindValue]">{{opt[bindLabel]}}</option>
+</select>
+<label >{{label}}</label>

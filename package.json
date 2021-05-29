@@ -6,11 +6,11 @@
   "scripts": {
     "postinstall": "cd ng && yarn install --production=false",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc && cd ng && yarn install && yarn build --prod",
-    "heroku-postbuild": "tsc && cd ng && yarn build --prod  && cd .. && cp -r ng/dist/ng dist/ng",
+    "build": "concurrently \"tsc\" \"cd ng && yarn build && cd .. && cp -r ng/dist/ng dist/ng\"",
+    "heroku-postbuild": "tsc && cd ng && yarn build && cd .. && cp -r ng/dist/ng dist/ng",
     "heroku-cleanup": "rm -rf src &&  rm -rf ng",
     "start": "node dist/server.js",
-    "start:dev": "tsnd --respawn --transpile-only src/server.ts"
+    "start:dev": "concurrently \"tsnd --respawn --inspect=0.0.0.0:7001 --transpile-only src/server.ts\" \"cd ng && npm run start\""
   },
   "cacheDirectories": [
     "node_modules",
@@ -20,12 +20,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "mongoose": "^5.12.12",
     "typescript": "^4.3.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.10",
     "@types/express": "^4.17.12",
     "@types/node": "^15.6.1",
+    "concurrently": "^6.2.0",
     "ts-node-dev": "^1.1.6"
   },
   "engines": {
