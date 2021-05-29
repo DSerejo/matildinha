@@ -15,6 +15,8 @@ import { SelectComponent } from './components/select/select.component';
 import { InfiniteLoadingComponent } from './components/infinite-loading/infinite-loading.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EditEventoComponent } from './edit-evento/edit-evento.component';
+import { DatetimepickerComponent } from './components/datetimepicker/datetimepicker.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SelectComponent,
     InfiniteLoadingComponent,
     EventosComponent,
+    EditEventoComponent,
+    DatetimepickerComponent,
     
   ],
   imports: [

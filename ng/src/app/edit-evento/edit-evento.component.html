@@ -1,0 +1,23 @@
+<ng-container *ngIf="loading">
+    <app-infinite-loading class="loading"></app-infinite-loading>
+   
+
+    <div class="loading-overlay"></div>
+</ng-container>
+<ng-container *ngIf="evento">
+    <div class="wrapper" >
+        <div><b>Tipo:</b> {{evento.tipo}}</div>
+        
+        <app-datetimepicker label="Início" [(ngModel)]="evento.inicio"></app-datetimepicker>
+        <app-datetimepicker label="Fim" class="mt-4" [(ngModel)]="evento.fim"></app-datetimepicker>
+    </div>
+    <div class="actions mt-3">
+        
+        <button class="btn" [class.btn-outline-danger]="!confirmDelete" [class.btn-danger]="confirmDelete" (click)="delete()">{{confirmDelete?'Confirmar':'Deletar'}}</button>
+        <div>
+            <a class="btn btn-outline-secondary" [routerLink]="['/eventos']">Voltar</a>
+            <button class="btn btn-outline-primary ml-3" (click)="save()">Salvar</button>
+        </div>
+        
+    </div>
+</ng-container>

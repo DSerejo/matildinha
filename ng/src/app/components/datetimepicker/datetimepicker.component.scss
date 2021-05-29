@@ -1,0 +1,22 @@
+:host{
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 15px;
+}
+.label{
+    position: absolute;
+    /* top: 0; */
+    background: inherit;
+    z-index: 2;
+    top: -15px;
+    background: white;
+    padding: 0 5px;
+    font-size: 1.2rem;
+}
+.item{
+    display: flex;
+    
+}

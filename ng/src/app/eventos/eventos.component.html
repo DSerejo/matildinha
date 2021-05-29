@@ -6,9 +6,9 @@
 </ng-container>
 
 <div class="wrapper" *ngIf="!loading">
-    <div class="evento" *ngFor="let evento of eventos">
+    <a class="evento" *ngFor="let evento of eventos" [routerLink]="['/evento/' + evento._id]">
         <div class="tipo" [ngClass]="evento.tipo" ><fa-icon [icon]="evento.icon"></fa-icon></div>
         <div style="width: 200px;">{{evento.inicio}}</div>
         <div style="flex-grow: 1; text-align: right;">{{evento.duracao}}</div>
-    </div>
+    </a>
 </div>

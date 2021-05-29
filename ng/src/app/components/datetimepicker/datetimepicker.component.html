@@ -1,0 +1,12 @@
+<div class="label">
+    {{label}}
+</div>
+<div class="item">
+    <app-select label="Day" [items]="days" [(ngModel)]="day"></app-select>
+    <app-select class="ml-2" label="Month" [items]="months" [(ngModel)]="month"></app-select>
+    <app-select class="ml-2" label="Year" [items]="years" [(ngModel)]="year"></app-select>
+</div>
+<div class="item mt-2">
+    <app-select label="Hour" [items]="hours"  [(ngModel)]="hour"></app-select>
+    <app-select class="ml-2" label="Minute" [items]="minutes"  [(ngModel)]="minute"></app-select>
+</div>
