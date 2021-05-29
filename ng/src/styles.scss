@@ -8,6 +8,9 @@
     --primary-color: #{$primary};
     --secondary-color: #{$secondary};
     --primary-color-medium: hsl(var(--primary-color-base), calc(var(--primary-color-l) - 5%));
+    --component-active-bg-focus: #{rgba($component-active-bg, .25)};
+    --component-active-bg: #{$component-active-bg};
+    --component-active-fg: white;
     --overlay-z-index: 1050;
 }
 

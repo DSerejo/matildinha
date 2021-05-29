@@ -10,8 +10,7 @@ export class EventoController extends BaseController{
     }
 
     async list(){
-        const eventos = await Evento.find()
-        console.log(eventos)
+        const eventos = await Evento.find({}, {}, { sort: { 'inicio' : -1 } })
         return eventos
     }
 

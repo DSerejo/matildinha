@@ -8,9 +8,27 @@
     border: 1px solid #ccc;
 }
 .content{
-    flex-grow: 1;
+    height: calc(100% - 50px);
 }
 .nav{
     height: 50px;
-    background-color: yellow;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    display: flex;
+    a {
+        text-decoration: none;
+        flex-grow: 1;
+        height: 50px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        &:hover{
+            background: var(--component-active-bg-focus)
+        }
+        &.active{
+            background: var(--component-active-bg);
+            color: var(--component-active-fg)
+        }
+    }
 }

@@ -13,6 +13,7 @@ import { InputComponent } from './components/input/input.component';
 import { FormsModule } from '@angular/forms';
 import { SelectComponent } from './components/select/select.component';
 import { InfiniteLoadingComponent } from './components/infinite-loading/infinite-loading.component';
+import { EventosComponent } from './eventos/eventos.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { InfiniteLoadingComponent } from './components/infinite-loading/infinite
     InputComponent,
     SelectComponent,
     InfiniteLoadingComponent,
+    EventosComponent,
     
   ],
   imports: [

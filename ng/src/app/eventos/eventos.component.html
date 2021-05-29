@@ -1,0 +1,14 @@
+<ng-container *ngIf="loading">
+    <app-infinite-loading class="loading"></app-infinite-loading>
+   
+
+    <div class="loading-overlay"></div>
+</ng-container>
+
+<div class="wrapper" *ngIf="!loading">
+    <div class="evento" *ngFor="let evento of eventos">
+        <div >{{evento.tipo}}</div>
+        <div >{{evento.inicio}}</div>
+        <div >{{evento.duracao}}</div>
+    </div>
+</div>

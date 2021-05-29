@@ -16,6 +16,10 @@ export class EventoService {
     complete(id: string){
         return this.http.post<Evento>('/api/evento/complete/' + id, {})
     }
+
+    list(){
+        return this.http.get<Evento[]>('/api/evento/')
+    }
 }
 
 export type CreateEventPayload = {
@@ -30,5 +34,5 @@ export interface Evento {
     inicio: string;
     fim?: string;
     tipo: TipoEvento,
-    duracao?: number
+    duracao?: string
 }
