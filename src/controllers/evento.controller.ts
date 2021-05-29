@@ -39,7 +39,7 @@ export class EventoController extends BaseController{
         const updateObj = this.di.request.body.set;
         const e = await Evento.findById(id)
         fields.forEach((f: string) => {
-            if((e as any)[f] && updateObj[f] !== undefined){
+            if(updateObj[f] !== undefined){
                 (e as any)[f] = updateObj[f]
             }
         })

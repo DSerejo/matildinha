@@ -41,6 +41,9 @@ export class DatetimepickerComponent extends ValueAccessorBase<Date> implements 
     return this.value?.getHours();
   }
   set hour(val: number) {
+    if(!this.value || isNaN(this.value.getTime())){
+      this.value = new Date;
+    }
     this.value?.setHours(val)
   }
 
@@ -48,6 +51,9 @@ export class DatetimepickerComponent extends ValueAccessorBase<Date> implements 
     return this.value?.getMinutes();
   }
   set minute(val: number) {
+    if(!this.value || isNaN(this.value.getTime())){
+      this.value = new Date;
+    }
     this.value?.setMinutes(val)
   }
 
@@ -55,6 +61,9 @@ export class DatetimepickerComponent extends ValueAccessorBase<Date> implements 
     return this.value?.getDate();
   }
   set day(val: number) {
+    if(!this.value || isNaN(this.value.getTime())){
+      this.value = new Date;
+    }
     this.value?.setDate(val)
   }
 
@@ -62,6 +71,9 @@ export class DatetimepickerComponent extends ValueAccessorBase<Date> implements 
     return this.value?.getMonth();
   }
   set month(val: number) {
+    if(!this.value || isNaN(this.value.getTime())){
+      this.value = new Date;
+    }
     this.value?.setMonth(val)
   }
 
@@ -69,6 +81,9 @@ export class DatetimepickerComponent extends ValueAccessorBase<Date> implements 
     return this.value?.getFullYear();
   }
   set year(val: number) {
+    if(!this.value || isNaN(this.value.getTime())){
+      this.value = new Date;
+    }
     this.value?.setFullYear(val)
   }
 }
