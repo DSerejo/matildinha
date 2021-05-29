@@ -22,7 +22,7 @@ export class EventosComponent implements OnInit {
       .pipe(tap(() => this.loading = false))
       .subscribe(res => this.eventos = res.map((e: any) => {
         e.inicio = moment(e.inicio).calendar();
-        e.duracao = e.duracao?humanize(e.duracao, { units: ["m"],maxDecimalPoints:0 }):''
+        e.duracao = e.duracao?humanize(e.duracao, { units: ["h", "m"],maxDecimalPoints:0 }):''
         if(e.tipo == 'dormir'){
           e.icon = faBed
         }

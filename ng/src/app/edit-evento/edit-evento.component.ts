@@ -31,7 +31,7 @@ export class EditEventoComponent implements OnInit {
         switchMap(evento => {
           const e: EventoEditable = evento as any;
           e.inicio = new Date(evento.inicio);
-          e.fim = new Date(evento.fim);
+          e.fim = new Date(evento.fim|| evento.inicio);
           return of(e);
         }),
         tap(() => {
