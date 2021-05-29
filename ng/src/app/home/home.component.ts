@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     this.loading = false;
     if(!this.ultimoCompleto){
       timer(0, 1000).subscribe(() => {
-        this.duracao$.next(humanize((new Date).getTime() - (new Date(e.inicio)).getTime()))
+        this.duracao$.next(humanize((new Date).getTime() - (new Date(e.inicio)).getTime(), {maxDecimalPoints: 0}))
       })
     }
   }

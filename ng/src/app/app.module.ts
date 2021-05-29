@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { SelectComponent } from './components/select/select.component';
 import { InfiniteLoadingComponent } from './components/infinite-loading/infinite-loading.component';
 import { EventosComponent } from './eventos/eventos.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EventosComponent } from './eventos/eventos.component';
     HttpClientModule,
     FormsModule,    
     NgbButtonsModule,
-    NgbTimepickerModule
+    NgbTimepickerModule,
+    FontAwesomeModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AddHostInterceptor, multi: true },

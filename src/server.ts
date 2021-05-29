@@ -3,6 +3,7 @@ import path from "path";
 import cors from "cors";
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose'
+import compression from 'compression'
 import { eventoRoute } from './routes/eventos.route';
 import { di } from './lib/di.lib';
 // rest of the code remains same
@@ -19,6 +20,9 @@ app.use(cors({
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }));
 app.use(bodyParser.json())
+if(process.env.NODE_ENV == 'production'){
+  app.use(compression())
+}
 
 app.use(express.static(publicPath))
   .set('views', publicPath)

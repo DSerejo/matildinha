@@ -20,8 +20,18 @@
     width: 100%;
     padding: 20px;
     border-bottom: 1px solid #ccc;
-    * {
-        flex-grow: 1;
+    .tipo {
+        width: 45px;
+        font-size: 1.2rem;
+        &.mamar{
+            color: var(--pink);
+        }
+        &.dormir{
+            color: var(--orange)
+        }
+        &.fralda{
+            color: var(--cyan)
+        }
     }
 }
 .loading {

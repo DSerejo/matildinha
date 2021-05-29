@@ -7,11 +7,16 @@
 
 <ng-container *ngIf="!loading">
     <ng-container *ngIf="last && !ultimoCompleto">
-        <div>
-            Ultimo evento: {{last.tipo}}
+        <table>
+            <tr><td><b>Último evento:</b></td><td>{{last.tipo}}</td></tr>
+            <tr><td><b>Início:</b></td><td>{{inicio}}</td></tr>
+            <tr><td><b>Duração:</b></td><td>{{duracao$ | async}}</td></tr>
+        </table>
+    <!-- <div>
+            <b>Último evento:</b> {{last.tipo}}
         </div>
-        <div>Inicio: {{inicio}}</div>
-        <div>Duracao: {{duracao$ | async}}</div>
+        <div><b>Início:</b> {{inicio}}</div>
+        <div><b>Duração:</b> {{duracao$ | async}}</div>  -->
     </ng-container>
 
     <div class="actions mt-4">

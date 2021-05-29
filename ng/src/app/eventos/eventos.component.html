@@ -7,8 +7,8 @@
 
 <div class="wrapper" *ngIf="!loading">
     <div class="evento" *ngFor="let evento of eventos">
-        <div >{{evento.tipo}}</div>
-        <div >{{evento.inicio}}</div>
-        <div >{{evento.duracao}}</div>
+        <div class="tipo" [ngClass]="evento.tipo" ><fa-icon [icon]="evento.icon"></fa-icon></div>
+        <div style="width: 200px;">{{evento.inicio}}</div>
+        <div style="flex-grow: 1; text-align: right;">{{evento.duracao}}</div>
     </div>
 </div>
