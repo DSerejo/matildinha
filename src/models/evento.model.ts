@@ -7,7 +7,7 @@ class EventoDocument extends mongoose.Document{
 const eventoSchema = new mongoose.Schema<EventoDocument>({
     tipo: {
         type: String,
-        enum: ['dormir', 'mamar', 'fralda']
+        enum: ['dormir', 'mamar', 'fralda', 'exercicio']
     },
     inicio: Date,
     duracao: Number,

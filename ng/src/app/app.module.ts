@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RootComponent } from './root/root.component';
-import { NgbButtonsModule, NgbModule, NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbButtonsModule, NgbModule, NgbTimepickerModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { EventComponent } from './event/event.component';
 import { InputComponent } from './components/input/input.component';
 import { FormsModule } from '@angular/forms';
@@ -39,6 +39,7 @@ import { DatetimepickerComponent } from './components/datetimepicker/datetimepic
     FormsModule,    
     NgbButtonsModule,
     NgbTimepickerModule,
+    NgbTooltipModule,
     FontAwesomeModule,
   ],
   providers: [

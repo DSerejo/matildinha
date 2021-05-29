@@ -4,7 +4,7 @@ import { tap } from 'rxjs/operators';
 import { Evento, EventoService } from '../event.service';
 import * as moment from 'moment'
 import humanize from 'humanize-duration'
-import { faBaby, faBed, faWineBottle, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faBaby, faBed, faDumbbell, faWineBottle, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-eventos',
   templateUrl: './eventos.component.html',
@@ -31,6 +31,9 @@ export class EventosComponent implements OnInit {
         }
         if(e.tipo == 'fralda'){
           e.icon = faBaby
+        }
+        if(e.tipo == 'exercicio'){
+          e.icon = faDumbbell
         }
         return e
       }))

@@ -36,13 +36,16 @@ export class EventoService {
 export const TiposEventos = [{
     id: 'dormir',
     name: 'Dormir'
+  },{
+    id: 'exercicio',
+    name: 'Exercicio'
+  },{
+    id: 'fralda',
+    name: 'Fralda'
   },
   {
     id: 'mamar',
     name: 'Mamar'
-  },{
-    id: 'fralda',
-    name: 'Fralda'
   }]
 
 export type CreateEventPayload = {
@@ -58,7 +61,7 @@ export type UpdateEventPayload = {
     fields: string[]
 }
 
-export type TipoEvento = 'dormir' | 'mamar' | 'fralda'
+export type TipoEvento = 'dormir' | 'mamar' | 'fralda' | 'exercicio'
 
 export interface Evento {
     _id: string;
