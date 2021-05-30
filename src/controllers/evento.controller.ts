@@ -1,6 +1,8 @@
 import { BaseController } from "../lib/base-controller.class";
 import { Evento } from "../models/evento.model";
-
+import sgMail from '@sendgrid/mail'
+import { MailDataRequired } from '@sendgrid/helpers/classes/mail'
+import { Alertas } from "../services/alertas.service";
 
 export class EventoController extends BaseController{
     async create(){
@@ -60,5 +62,15 @@ export class EventoController extends BaseController{
         }
         await e.save();
         return e;
+    }
+
+    async email(){
+        const alertas = new Alertas;
+        const toSend = await alertas.run();
+        sgMail.setApiKey(process.env.SENDGRID_API_KEY || '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')
+        
+        return await Promise.all(toSend.map(msg => {
+            return sgMail.send(msg)
+        }));
     }
 }
