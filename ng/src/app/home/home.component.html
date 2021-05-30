@@ -1,18 +1,43 @@
 <ng-container *ngIf="loading">
     <app-infinite-loading class="loading"></app-infinite-loading>
-   
+
 
     <div class="loading-overlay"></div>
 </ng-container>
 
 <ng-container *ngIf="!loading">
+    <div *ngIf="alertas && alertas.length" class="alertas">
+        <div class="title">
+            Alertas
+        </div>
+        <div *ngFor="let alerta of alertas" class="alerta">
+            <div class="info mr-4">
+                <div class="tipo">{{alerta.key}}</div>
+                <div class="time">Desde: {{alerta.created_at}}</div>
+            </div>
+            <div class="btn-group btn-group-toggle">
+                <label class="btn btn-outline-primary" ngbButtonLabel>
+                    <input type="checkbox" (click)="updateAlerta(alerta)" ngbButton [(ngModel)]="alerta.active"> {{alerta.active?'Ativo':'Inativo'}}
+                </label>
+            </div>
+        </div>
+    </div>
     <ng-container *ngIf="last && !ultimoCompleto">
         <table>
-            <tr><td><b>Último evento:</b></td><td>{{last.tipo}}</td></tr>
-            <tr><td><b>Início:</b></td><td>{{inicio}}</td></tr>
-            <tr><td><b>Duração:</b></td><td>{{duracao$ | async}}</td></tr>
+            <tr>
+                <td><b>Último evento:</b></td>
+                <td>{{last.tipo}}</td>
+            </tr>
+            <tr>
+                <td><b>Início:</b></td>
+                <td>{{inicio}}</td>
+            </tr>
+            <tr>
+                <td><b>Duração:</b></td>
+                <td>{{duracao$ | async}}</td>
+            </tr>
         </table>
-    <!-- <div>
+        <!-- <div>
             <b>Último evento:</b> {{last.tipo}}
         </div>
         <div><b>Início:</b> {{inicio}}</div>

@@ -24,3 +24,37 @@
 b{
     color: var(--primary-color);
 }
+
+.alertas{
+    
+    padding: 10px;
+    border-radius: 4px;
+    position: relative;
+    margin-top: 15px;
+    border: 1px solid red;
+    // width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    .title{
+        position: absolute;
+        background: white;
+        padding: 0 5px;
+        top: -10px;
+        left: 10px;
+        color: red;
+    }
+    .alerta{
+        display: flex;
+        width: 100%;
+        padding: 10px 20px;
+        align-items: center;
+        color: var(--secondary-color);
+        .tipo{
+            font-weight: bold;
+        }
+        .time {
+            font-size: 0.8rem;
+        }
+        
+    }
+}

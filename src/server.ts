@@ -6,6 +6,7 @@ import mongoose from 'mongoose'
 import compression from 'compression'
 import { eventoRoute } from './routes/eventos.route';
 import { di } from './lib/di.lib';
+import { alertaRoute } from './routes/alertas.route';
 // rest of the code remains same
 const publicPath = process.env.NODE_ENV == 'production'? path.join(__dirname, 'ng'): path.join(__dirname, '../ng/dist/ng');
 const app = express();
@@ -41,6 +42,7 @@ app.use((req, res , next) => {
 //   res.send(evento);
 // });
 app.use('/api/evento', eventoRoute);
+app.use('/api/alerta', alertaRoute);
 app.get('*', (req, res) => res.render('index.html'));
 app.listen(PORT, () => {
   console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);

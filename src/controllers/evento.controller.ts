@@ -68,7 +68,7 @@ export class EventoController extends BaseController{
         const alertas = new Alertas;
         const toSend = await alertas.run();
         sgMail.setApiKey(process.env.SENDGRID_API_KEY || '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')
-        
+        // return toSend;
         return await Promise.all(toSend.map(msg => {
             return sgMail.send(msg)
         }));
