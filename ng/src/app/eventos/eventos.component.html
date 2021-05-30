@@ -6,6 +6,12 @@
 </ng-container>
 
 <div class="wrapper" *ngIf="!loading">
+    <div class="filter">
+        <app-datetimepicker [(ngModel)]="dia" (ngModelChange)="reload()" [time]="false" label="Dia"></app-datetimepicker>
+    </div>
+    <div *ngIf="!eventos?.length" style="padding-top: 30px; text-align: center;">
+        Nenhum evento encontrado
+    </div>
     <a class="evento" *ngFor="let evento of eventos" [routerLink]="['/evento/' + evento._id]">
         <div class="tipo" [ngClass]="evento.tipo" [ngbTooltip]="evento.tipo" ><fa-icon [icon]="evento.icon"></fa-icon></div>
         <div style="width: 200px;">{{evento.inicio}}</div>

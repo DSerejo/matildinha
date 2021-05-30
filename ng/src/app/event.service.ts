@@ -20,8 +20,10 @@ export class EventoService {
         return this.http.post<Evento>('/api/evento/complete/' + id, {})
     }
 
-    list(){
-        return this.http.get<Evento[]>('/api/evento/')
+    list(params?: {dia: string}){
+        return this.http.get<Evento[]>('/api/evento/', {
+            params
+        })
     }
 
     get(id:string){

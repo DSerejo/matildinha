@@ -25,10 +25,12 @@ const rangeItems = (length: number, offset = 1, pad: number = 2 ) => [...Array(l
 export class DatetimepickerComponent extends ValueAccessorBase<Date> implements OnInit{
   
   days = rangeItems(31)
-  months = moment.months().map((name, i) => ({id: i+1, name}));
+  months = moment.months().map((name, i) => ({id: i, name}));
   years = rangeItems(3, 2021)
   hours = rangeItems(24, 0)
   minutes = rangeItems(60, 0)
+  
+  @Input() time: boolean = true;
   @Input() label: string = '';
 
   ngOnInit(){
@@ -44,7 +46,7 @@ export class DatetimepickerComponent extends ValueAccessorBase<Date> implements 
     if(!this.value || isNaN(this.value.getTime())){
       this.value = new Date;
     }
-    this.value?.setHours(val)
+    this.value = new Date(this.value.setHours(val))
   }
 
   get minute() {
@@ -54,7 +56,7 @@ export class DatetimepickerComponent extends ValueAccessorBase<Date> implements 
     if(!this.value || isNaN(this.value.getTime())){
       this.value = new Date;
     }
-    this.value?.setMinutes(val)
+    this.value = new Date(this.value.setMinutes(val))
   }
 
   get day() {
@@ -64,7 +66,7 @@ export class DatetimepickerComponent extends ValueAccessorBase<Date> implements 
     if(!this.value || isNaN(this.value.getTime())){
       this.value = new Date;
     }
-    this.value?.setDate(val)
+    this.value = new Date(this.value.setDate(val))
   }
 
   get month() {
@@ -74,7 +76,7 @@ export class DatetimepickerComponent extends ValueAccessorBase<Date> implements 
     if(!this.value || isNaN(this.value.getTime())){
       this.value = new Date;
     }
-    this.value?.setMonth(val)
+    this.value = new Date(this.value.setMonth(val))
   }
 
   get year() {
@@ -84,6 +86,6 @@ export class DatetimepickerComponent extends ValueAccessorBase<Date> implements 
     if(!this.value || isNaN(this.value.getTime())){
       this.value = new Date;
     }
-    this.value?.setFullYear(val)
+    this.value = new Date(this.value.setFullYear(val))
   }
 }

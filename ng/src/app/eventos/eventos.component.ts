@@ -15,10 +15,16 @@ export class EventosComponent implements OnInit {
   loading = true;
   
   eventos: (Evento & {duracao?: string, icon: IconDefinition})[]
+  dia = new Date
   constructor(private service: EventoService) { }
 
   ngOnInit(): void {
-    this.service.list()
+    this.reload()
+  }
+
+  reload(){
+    this.loading = true;
+    this.service.list({dia: moment(this.dia).format('YYYY-MM-DD')})
       .pipe(tap(() => this.loading = false))
       .subscribe(res => this.eventos = res.map((e: any) => {
         e.inicio = moment(e.inicio).calendar();

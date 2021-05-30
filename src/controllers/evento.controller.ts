@@ -10,7 +10,19 @@ export class EventoController extends BaseController{
     }
 
     async list(){
-        const eventos = await Evento.find({}, {}, { sort: { 'inicio' : -1 } })
+        const dia = this.di.request.query?.dia as string;
+        const filter = {};
+        if(dia){
+            const inicio = new Date(dia);
+            inicio.setHours(0,0,0);
+            const fim = new Date(inicio);
+            fim.setDate(inicio.getDate() + 1);
+            filter['inicio'] = {
+                $gte: inicio,
+                $lt: fim
+            }
+        }
+        const eventos = await Evento.find(filter, {}, { sort: { 'inicio' : -1 } })
         return eventos
     }
 

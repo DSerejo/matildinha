@@ -6,7 +6,7 @@
     <app-select class="ml-2" label="Month" [items]="months" [(ngModel)]="month"></app-select>
     <app-select class="ml-2" label="Year" [items]="years" [(ngModel)]="year"></app-select>
 </div>
-<div class="item mt-2">
+<div class="item mt-2" *ngIf="time">
     <app-select label="Hour" [items]="hours"  [(ngModel)]="hour"></app-select>
     <app-select class="ml-2" label="Minute" [items]="minutes"  [(ngModel)]="minute"></app-select>
 </div>

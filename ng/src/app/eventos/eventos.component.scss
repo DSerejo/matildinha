@@ -47,3 +47,13 @@
     top: 0;
     z-index: calc(var(--overlay-z-index) + 1);
 }
+.filter {
+    display: flex;
+    position: sticky;
+    width: 100%;
+    justify-content: center;
+    top: 0;
+    background: white;
+    padding-bottom: 10px;
+    box-shadow: 2px 0 2px rgb(0 0 0 / 50%);
+}
